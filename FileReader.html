@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+  </head>
+  <body>
+    <input type="file" name="file" id="file" value="" />
+  </body>
+
+  <script type="text/javascript" charset="utf-8">
+    var reader = new FileReader();
+    
+    // Define an event handler for when the file is loaded
+    reader.onload = function (event) {
+      // The file content is available in event.target.result
+      var fileContent = event.target.result;
+      console.log(fileContent);
+    };
+
+    // Read a file selected by the user
+    var fileInput = document.getElementById("file"); // Assuming you have an input element with id="fileInput"
+    var selectedFile = fileInput.files[0];
+    reader.readAsText(selectedFile);
+  </script>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+   <style type="text/css" media="all">
+     body {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 100vh;
+       background: #ccc;
+     }
+     .cube {
+       transform-style: preserve-3d;
+       width: 200px;
+       height: 200px;
+       position: relative;
+       
+       
+       animation: spin 15s linear;
+     }
+     @keyframes spin {
+       100% {
+         
+         transform: rotateY(360deg) rotateX(360deg);
+       }
+     }
+.cube div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid;
+  
+} 
+.front {
+  background: violet;
+  transform: translateZ(200px);
+}
+.back {
+  background: green;
+  transform: rotateY(180deg);
+}
+.left {
+  background: yellow;
+  transform-origin: 100%;
+  transform: translateX(-200px) rotateY(90deg);
+}
+.right {
+  background: blue;
+  transform-origin: 0;
+  transform: translateX(200px) rotateY(-90deg);
+  
+}
+.top {
+  background: orange;
+  transform-origin: 0 100%;
+  transform: translateY(-200px) rotateX(-90deg);
+  
+}
+.bottom {
+  background: red;
+  transform-origin: 0 0;
+  transform: translateY(200px) rotateX(90deg);
+}
+   </style>
+   
+   
+   
+    <title>Cube</title>
+    
+  </head>
+  <body>
+    
+    <div class="cube">
+      <div class="front"></div>
+      <div class="back"></div>
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="top"></div>
+      <div class="bottom"></div>
+    </div>
+    
+    
+    
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css" media="all">
+      * {
+        margin: 0;
+      }
+      body {
+        padding: 2rem;
+      }
+      #main {
+        max-width: 300px;
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+        padding: 10px;
+        background: #E1F5FE;
+        color: #0277BD;
+        border: 2px solid #fff;
+        border-radius: 10px;
+      }
+      @@media (min-width: 400px) {
+        #main {
+          max-width: 1200px;
+        }
+      }
+      .cover {
+        
+        display: grid;
+        flex: 1;
+        width: 100%;
+        grid-template-columns: 1.3fr 1fr;
+
+        height: 300px;
+      }
+      .description {
+        
+      }
+      .img {
+        background: #29B6F6;
+        height: 200px;
+        margin-top: 20px;
+      }
+      .bottom {
+        height: 30px;
+        
+        padding: 10px;
+        text-align: center;
+      }
+      .bottom button {
+        width: 100%;
+        height: 100%;
+        border: 2px solid #03A9F4;
+        
+        border-radius: 12px;
+      }
+      h1 {
+        color: #01579B;
+        margin-bottom: 10px;
+        font-size: 2.5em;
+      }
+      p {
+        
+        font-size: 0.8em;
+      }
+    </style>
+    <title>Card</title>
+  </head>
+  <body>
+    <div id="main">
+      <div class="cover">
+        <div class="description">
+          <h1>Religion Of God</h1>
+          <h5>Author</h5>
+          <h6>His Holiness Gohar Shahi </h6>
+          <p>Religion of God Is the Ultimate Gift of His Holiness Gohar Shahi to lover of
+          GOD. Regardless of Any religion you can reach God thorough
+          spirituality 
+          </p>
+        </div>
+        <div class="img">
+          <img src="" alt="" />
+        </div>
+      </div> 
+      <div class="bottom">
+        <button>Download</button>
+        
+      </div>
+    </div>
+  </body>
+</html>

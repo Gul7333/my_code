@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css" media="all">
+      .input {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 7px;
+      }
+      .results {
+        padding: 10px;
+        font-size: 24px;
+        text-align: center;
+        font-weight: 600;
+        margin-top: 100px;
+        border: 2px solid black;
+      }
+    </style>
+    <title>Addition</title>
+  </head>
+  <body>
+    <div class="input">
+      <textarea name="" id="rows" ="8" cols="40"></textarea>
+      <textarea name="" id="rows" ="8" cols="40"></textarea>
+    </div>
+    <button onclick="showResult()">show Sum</button>
+    <button onclick="showProduct()">show product</button>
+    <button onclick="showLcm()">show LCM</button>
+    <div class="results"></div>
+
+    <script type="text/javascript" charset="utf-8">
+    console.log(Math)
+      const input = document.querySelector(".input");
+      const input1 = input.children[0];
+      const input2 = input.children[1];
+      function add(x, y) {
+        return x + y;
+      }
+      function product(x, y) {
+        return x * y;
+      }
+      function gcd(x,y) {
+        if(y === 0 || y == null) {
+          return x
+        }else {
+         return gcd(y, x % y)
+        }
+      }
+      function Lcm(x,y) {
+        return (x * y) / gcd(x,y)
+      }
+
+      function showResult() {
+        let num1 = parseInt(input1.value);
+        let num2 = parseInt(input2.value);
+        const sum = add(num1, num2);
+        document.querySelector(".results").innerText = sum;
+      }
+      function showProduct() {
+        let num1 = parseInt(input1.value);
+        let num2 = parseInt(input2.value);
+        const prduct = product(num1, num2);
+        document.querySelector(".results").innerText = prduct;
+      }
+      function showLcm() {
+        let num1 = parseInt(input1.value);
+        let num2 = parseInt(input2.value);
+        const Lcmm = Lcm(num1,num2);
+        document.querySelector(".results").innerText = Lcmm;
+      }
+    </script>
+  </body>
+</html>

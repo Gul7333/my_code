@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <style type="text/css" media="all">
+      body {
+        display: grid;
+        place-content: center;
+        gap: 2rem;
+      }
+      .cont {
+        height: 300px;
+        width: 300px;
+        background: #333;
+        display: flex;
+        overflow: scroll;
+        transition: all 2s;
+      }
+      .card {
+        width: 100%;
+        height: 100%;
+        background: #444;
+        border: 2px solid yellow;
+        flex-shrink: 0;
+        transition: all 1s ease;
+      }
+      .card:nth-child(2) {
+        background: yellow;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Div</title>
+  </head>
+  <body>
+    <div class="cont">
+      <div class="card"></div>
+      <div class="card active"></div>
+      <div class="card"></div>
+      <div class="card"></div>
+    </div>
+    <button id="button">Scroll left</button>
+  </body>
+  <script type="text/javascript" charset="utf-8">
+    // Find the target div with the "active" class
+    var targetDiv = document.querySelector(".active");
+    
+    const button = document.getElementById("button");
+    button.onclick = scroll;
+    let length = 0;
+    let scrollToEnd = false;
+    const cont = document.querySelector(".cont");
+
+
+
+
+    console.log(cont.children)
+    let arr = cont.children
+    Array.from(arr).forEach(function (i, ind) {
+      setTimeout(() => {
+        i.scrollIntoView({
+          behavior: "smooth",
+        })
+      },ind * 3000)
+    })
+    // Scroll to the target div
+    console.log(cont.scrollWidth);
+  </script>
+</html>

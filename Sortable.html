@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style type="text/css" media="all">
+            .drag_box {
+                width: 340px;
+                height: 600px;
+                background: #777;
+                padding: 10px;
+                box-sizing: border-box;
+                border-radius: 10px;
+            }
+            .drag_item {
+                background: #eee;
+                list-style: none;
+                font-weight: bold;
+                font-family: Monospace;
+                margin-bottom: 15px;
+                line-height: 40px;
+                padding: 5px 3px;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+        </style>
+
+        <title>Sortable list</title>
+    </head>
+    <body>
+        <div class="drag_box">
+            <div class="drag_item">
+                <li>Follower of Riaz Ahmed Gohar Shah</li>
+            </div>
+            <div class="drag_item">
+                <li>Follower of Sarkar Gohar Shah</li>
+            </div>
+            <div class="drag_item">
+                <li>Follower of Younus ALGohar Shah</li>
+            </div>
+            <div class="drag_item">
+                <li>Follower of Riaz Ahmed Gohar Shah</li>
+            </div>
+            <div class="drag_item">
+                <li>Follower of Riaz Ahmed Gohar Shah</li>
+            </div>
+            <div class="drag_item">
+                <li>Follower of Riaz Ahmed Gohar Shah</li>
+            </div>
+        </div>
+        <script src="
+https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js
+"></script>
+
+        <script type="text/javascript" charset="utf-8">
+            const dragBox = document.querySelector(".drag_box");
+            new Sortable(dragBox, {
+                animation: 20
+            });
+        </script>
+    </body>
+</html>

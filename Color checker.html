@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Checker</title>
+    <style type="text/css" media="all">
+      #box {
+        min-height: 70px;
+        
+        margin-bottom: 70px;
+      }
+      input {
+        padding: 10px;
+        background: #eee;
+        border: none;
+        margin: 20%;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      
+    </div>
+    <input type="text" name="" id="text" value="" />
+ 
+ 
+ <script type="text/javascript" charset="utf-8">
+   const box = document.getElementById("box")
+   console.log(box)
+   const input= document.getElementById("text")
+   input.addEventListener("keyup", (e) => {
+     console.log(e.target.value)
+     let color = e.target.value
+     
+     box.style.background = ""
+     box.style.background = `${color}`
+   })
+   
+ </script>
+  </body>
+</html>
