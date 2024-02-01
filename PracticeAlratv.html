@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style type="text/css" media="all">
+   :root {
+     color: #333;
+   }
+   body {
+     margin: 0;
+     height: 200vh;
+   }
+    #nav {
+      height: 40vh;
+      background: #0bbc7dfc;
+    } 
+    #form {
+      width: 300px;
+      height: 400px;
+      background: #18c5d2fc;
+      margin: 0 auto;
+      transform: translateY(-100px);
+      border-radius: 10px;
+    }
+    #target {
+      color: #555;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #16df5f;
+      background: #fff;
+      border-top: 1px solid #ddd;
+      color: #040851;
+      color: #333;
+      box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+      
+      padding: 6px 1em;
+      transition: transform 0.2s;
+      display: flex;
+      justify-content: space-between;
+    }
+    h3 {
+      
+      margin: 0;
+    }
+   </style>
+    <title>practice</title>
+    
+  </head>
+  <body>
+    <nav id="nav">
+    </nav>
+    <article id="form">
+      
+    </article>
+    <div id="target">
+      <div>
+        
+      <h3>Target</h3>
+      <h3>1000</h3>
+      </div>
+      <div>
+        
+      <h3>Acheived</h3>
+      <h3>999</h3>
+      </div>
+    </div>
+    
+    
+  <script type="text/javascript" charset="utf-8">
+    const bottom_bar = document.getElementById('target')
+let yy = 0
+window.addEventListener('scroll', e => {
+  
+  const y = window.scrollY
+  if(y > yy) {
+    bottom_bar.style.transform = 'translateY(100px)'
+ yy = y
+  }
+  else if(y < yy){
+    bottom_bar.style.transform = 'translateY(0)';
+   yy = y
+  }
+  console.log(y)
+})
+  </script>  
+  </body>
+</html>

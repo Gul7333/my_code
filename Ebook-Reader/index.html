@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebook Reader</title>
+    
+  </head>
+  <body>
+    <video style="transform: scaleX(-1)" id="video" height="500" width="366" autoplay  ></video>
+    <pre data-text>
+      bb
+    </pre>
+    <script type="text/javascript" charset="utf-8">
+      const video = document.getElementById('video')
+      console.log(video)
+      async function setup() {
+        try {
+        const stream = await navigator.mediaDevices.getUserMedia({video: true,})
+        video.srcObject = stream
+        }catch (err) {
+          console.log(err)
+          alert('Permission Denied')
+        }
+      }
+      setup()
+        
+    </script>
+  </body>
+</html>

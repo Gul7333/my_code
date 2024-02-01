@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/css" media="all">
+        pre {
+            white-space: pre-wrap;
+        }
+        video {
+            /* transform: scaleX(-1); */
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+    <video
+        id="video"
+        src=""
+        height="500"
+        width="360"
+        preload="none"
+        autoplay="autoplay"
+        muted
+    ></video>
+    
+    <pre id="pre"></pre>
+
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        const preTag = document.getElementById("pre");
+        const video = document.getElementById("video");
+        const body = document.querySelector("body");
+
+        async function setVideo() {
+            const stream = await navigator.mediaDevices.getUserMedia({
+                video: { facingMode: 'environment' }
+            });
+            video.srcObject = stream;
+        }
+
+        async function setUp() {
+            const worker = await Tesseract.createWorker("eng");
+
+            const canvas = document.createElement("canvas");
+            canvas.width = video.width;
+            canvas.height = video.height;
+
+            canvas
+                .getContext("2d")
+                .drawImage(video, 0, 0, video.width, video.height);
+
+            body.append(canvas);
+            if(canvasLoaded(canvas)) {
+
+            const ret = await worker.recognize(canvas, 'eng');
+            preTag.textContent = ret.data.text;
+}
+
+            await worker.terminate();
+        }
+
+        // Ensure the video is loaded before calling setUp
+             setVideo();
+        video.addEventListener('loadeddata', async () => {
+            await setUp();
+        });
+    </script>
+</body>
+</html>

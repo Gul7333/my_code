@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style type="text/css" media="all">
+    body {
+      padding: 50% 0 0 0;
+    }
+    
+      .card {
+        display: flex;
+        border-radius: 8px;
+        max-width: 400px;
+        background: #ddd;
+        padding: 24px;
+        font-size: 15px;
+        text-decoration: none;
+        box-shadow: 3px 3px 10px #eee;
+      }
+      @media (max-width: 400px) {
+        
+      }
+      p {
+        margin: 0;
+      }
+      .img div {
+        width: 80px;
+        height: 80px;
+        
+        background: yellow;
+        border-radius: 50%;
+        margin-right: 24px;
+      }
+     .title{
+        margin-top: 0;
+        font-size: 1.4em;
+      }
+      .des {
+        line-height: 1.5;
+        margin-bottom: 0;
+      }
+      .des:last-child{
+        /* margin-bottom: 0; */
+        color: yellow;
+      }
+    </style>
+    
+    <title></title>
+    
+  </head>
+  <body>
+    <a href="#" class="card">
+      <div class="img">
+       <div>
+         
+       </div> 
+      </div>
+      <div class="text">
+        <p class="title">title</p>
+        <p class="des">sjjdjdjsj djdjsj djsjjsj djsjsj jj jn kkk bbj jjj jjjj jjj sjjs sjjsnd sjsjjs djdjdjdj dnndndj hhh vggg hhhhh bhh jjj jjj jj jj djej</p>
+      </div>
+    </a>
+  </body>
+</html>

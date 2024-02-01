@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css" media="all">
+    input {
+      margin: 50px 50px;
+      padding: 12px 6px;
+      border: none;
+      outline:2px solid #0091EA;
+      /* outline-offset: 4px; */
+      border-radius: 4px;
+      background: Transparent;
+      transition: box-shadow 0.3s;
+      color: #151515;
+     
+    }
+    input:focus {
+      box-shadow: 0 0 30px #0091EA;
+      
+    }
+    .blur {
+    margin: 0 auto;
+    background: Transparent;
+    text-align: center;
+    text-shadow: 0 0 20px yellow,
+    0 0 40px yellow,
+    0 0 80px yellow,
+    0 0 120px yellow;
+    font-weight: 600;
+    user-select: none;
+    /* box-shadow: 0 0 50px yellow; */
+    }
+    button {
+      padding: 6px 4px;
+      background: yellow;
+      border: none;
+      border-radius: 4px;
+      margin: 30px 120px;
+    
+      
+    }
+  </style>
+  
+    <title></title>
+    
+  </head>
+  <body id="body">
+    <input type="text/submit/hidden/button/image" name="" id="" value="" placeholder="Gohar" />
+    
+    
+    <div class="blur">
+      Sarkar Riaz Ahmed Gohar Shahi
+    </div>
+    <button id="btn">click for sound</button>
+    
+  </body>
+  
+  <script type="text/javascript" charset="utf-8">
+    const btn = document.getElementById('btn')
+    const body = document.getElementById('body')
+    let day = true
+    btn.onclick = function play()  {
+      const audio = new Audio('./Sound/mixkit-plastic-bubble-click-1124.wav')
+      audio.preload = 'auto';
+      day = !day
+      let color = day ? '#fff' : '#333'
+      body.style.background = color
+      audio.play()
+    }
+  </script>
+</html>

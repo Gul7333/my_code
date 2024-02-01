@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style type="text/css" media="all">
+    button {
+      padding: 4px 6px;
+      border: 1px solid blue;
+      outline: none;
+      margin: 5em 10em;
+    }
+    .Location {
+      text-align: center;
+      
+    }
+  </style>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Location</title>
+
+</head>
+
+<body>
+  <div class="Location">
+    <h3>Your Location will Appear here</h3>
+
+  </div>
+  <button>Get Location</button>
+
+</body>
+<p>This App Uses navigator.geoLocation api and then get the name of coords region use a third party api</p>
+<script>
+const button = document.querySelector("button")
+const divBox = document.querySelector(".Location h3")
+button.onclick = 
+function getLocation() {
+  // body...
+let startTime = performance.now()
+divBox.innerText = "Getting Your Location"
+navigator.geolocation.getCurrentPosition(done, notdone)
+}
+function done(position) {
+  console.log(position)
+  const { longitude, latitude} = position.coords;
+  console.table(longitude, latitude)
+  getNameOfCoords(latitude,longitude)
+}
+function notdone(error) {
+  console.log(error)
+}
+async function getNameOfCoords(latitude,longitude){
+  const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`;
+  fetch(url).then(data => {
+    return data.json()
+  }).then(data => {
+    let timeEnd = performance.now()
+    console.table(data.address)
+    divBox.innerText = data.address.municipality
+    
+  }).catch(err => {
+    divBox.innerText = "Plz give Location permission or turn on Location"
+  })
+}  
+</script>
+
+
+
+</html>

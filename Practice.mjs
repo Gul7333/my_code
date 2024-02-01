@@ -32,8 +32,8 @@
 // console.log(Object);
 // const fs = require("node:fs");
 
-// import fs from "node:fs";
 // console.log(typeof fs);
+// import fs from "node:fs";
 // console.log(Object.keys(fs));
 // learning streams
 // const Stream = require("stream");

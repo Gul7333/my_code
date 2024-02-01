@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+            type="text/css"
+            media="all"
+        />
+        <title>Animate</title>
+    </head>
+    <body>
+        <h1 class="animate__animated animate__bounce">An animated element</h1>
+        <h1 class="shake animate__animated">An animated element</h1>
+    </body>
+    <script type="text/javascript" charset="utf-8">
+        let custom_class = "animate__zoomOutRight";
+        const shake = document.querySelector(".shake");
+        shake.onclick = e => {
+            e.target.classList.add(custom_class);
+
+            removeClass(1000, e.target, custom_class);
+        };
+        function removeClass(time, element, clas) {
+            setTimeout(() => {
+                element.classList.remove(clas);
+            }, time);
+        }
+    </script>
+</html>

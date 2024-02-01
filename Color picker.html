@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eyedropper Example</title>
+  <style>
+    canvas {
+      border: 1px solid #000;
+      cursor: crosshair;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="eyedropperCanvas" width="400" height="400"></canvas>
+
+  <script>
+    const canvas = document.getElementById('eyedropperCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Draw a sample image on the canvas
+    ctx.fillStyle = '#ff0000';
+    ctx.fillRect(0, 0, 300, 300);
+
+    // Add a click event listener to the canvas
+    canvas.addEventListener('click', function(event) {
+      // Get the pixel data at the clicked position
+      const pixelData = ctx.getImageData(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop, 1, 1).data;
+
+      // Extract RGB values from pixel data
+      const red = pixelData[0];
+      const green = pixelData[1];
+      const blue = pixelData[2];
+
+      // Display the RGB values
+      alert(`RGB values at clicked position: ${red}, ${green}, ${blue}`);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Player for Selected Files</title>
+</head>
+<body>
+
+  <input type="file" id="fileInput" multiple>
+  <div id="audioPlayers"></div>
+
+  <script>
+    document.getElementById('fileInput').addEventListener('change', handleFileSelect);
+
+    function handleFileSelect(event) {
+      const audioPlayers = document.getElementById('audioPlayers');
+      audioPlayers.innerHTML = ''; // Clear previous audio elements
+
+      const files = event.target.files;
+      for (let i = 0; i < files.length; i++) {
+        const audioElement = document.createElement('audio');
+        audioElement.controls = true;
+        audioElement.src = URL.createObjectURL(files[i]);
+
+        const listItem = document.createElement('div');
+        listItem.textContent = files[i].name;
+        listItem.appendChild(audioElement);
+
+        audioPlayers.appendChild(listItem);
+      }
+    }
+  </script>
+
+</body>
+</html>

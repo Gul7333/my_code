@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style type="text/css" media="all">
+            body {
+                margin: 0;
+            }
+            [data-heading] {
+                display: flex;
+                justify-content: center;
+                height: 50px;
+                gap: 0.6em;
+                margin-bottom: 1em;
+            }
+            [data-body] {
+                display: grid;
+                place-content: center;
+                width: 100%;
+                height: 100vh;
+                background: #9b90f1d8;
+            }
+            h4 {
+                color: #125ee8;
+            }
+            [data-fb-container] {
+                width: 340px;
+                padding: 1em;
+                box-sizing: border-box;
+                border: 1px solid #0a0807c1;
+                border-radius: 10px;
+            }
+            [data-input] {
+                width: 300px;
+                margin-bottom: 14px;
+            }
+            input,
+            button {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 16px;
+                border-radius: 5px;
+                outline-style: none;
+                /* background: none; */
+                border: none;
+                color: #444;
+                font-weight: 500;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            }
+            button {
+                background: #5c92f5c1;
+                color: #eee;
+                font-size: 1.3em;
+                line-height: 0.7;
+            }
+        </style>
+        <title>Facebook</title>
+    </head>
+    <body>
+        <article data-body>
+            <form action="" method="post" accept-charset="utf-8">
+                <div data-fb-container>
+                    <div data-heading>
+                        <img
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE1klEQVR4nO2Z609bZRzHT7ht64DJdWNlzA7GWoyvjIv+FZqomZkvJJkvfa8hjsNt0DEqQ2DQcqczJijgBXDqFuOyxPhCsxBMHPSyXg6l7WnP6SnQnkL5maeoYeG05zx9oGrCN/m9/3xPn9/v+T3fUtSRjnQkck1BtnYi9OqlcaGhdjw0XTvO/35xNBSsGeNi1aNcrHqED2qGuSXNcHBaYwo2nDexr1A0ZFH/tl74bPOczhzWaycF96UJAVDVjofg4hgqHmpGeage4eHCMJcozVAQnjehCsD5wYCraoDtUJvYyoyD10wJZTpz2KidFETtZBiw4Y0BqBpkE1V5xy9W3vENVBiZ0ozA190NX9VOrgd05jCQwp8bSBhIlLrfx57t9b19aOAvGSG37m54SGdeh0OAh7N9qLxQ0esdpIyQe9DwqjpzeCED8HDmEy+U96zNVxgZ1UHB52YS/nTPWqLKbq/+QNFLecQGMnRsYC98+W0PlHV7oLSbGSCD/zT8Dim8xsjCtXsCjC5G4IFDhF/XtuBnJgYPnSLMWaLw0UNBEr6sexVKP16Foi73lbTgtROhEt3kup8E/rVZHmz8NqTSI5eYFL7EwEBJFxPI70pjxKI5TwL/+iwP4vZOSvi9BiThDQwUdzFQ1Onqx4J/0bxRSXJJXTCx4BLioESPXGJq+FtuVGKRnqnC+fp6koZ9/35YEfzfBmTg4blOF5y66exQRk9DlnZCcJFMm+knUZCSI7QNb85wUDvo260BL2j61xTAu6BQ73CjpVGWP7FVEo7K5aB0474xw6VuWIM0/KmbTijUJ+qyrAG0EpPO+WBkf/N61uNwhgC+oMMB+XrHh/IGJkIzpJfUlkT//rIaI4Iv6HDAyXbH57IGasf4JdIbNi4xPe/bo0Tw+e0OUN2wL8oaqBkLBUjXAykD39uiRPAnbzyFE212v7yBUU4k3W2SG0gfXtX2FFSt9qisgeoRTsSBRxcWH915pqQUiwNwkfi+Mv22rgy+zQ4nWpQZCOB8eUGUXxdSqeknXhl8qx2OtdjkjxBKD3CODamBqzOsIvjjLTY43myTb2LNUHAG58yTGrg87FEG32KDY802+TGKchuchg0RGNiKA5TecimFh7wmyweyBlDohPOSqp/j4b2Fv2qeg2tzHEhZerwWg/qvA1D/FQvvfrlbV77wY8BbIafZ+rKiZa7KyDrTfQaiUSk1Rr+zRpRPm9b98LlNVofiNA8lZunCozmfzEC68HnIAG1pp5QKxX27iRk+PLqgpAzcs0RI4KNUwxM1hSMU96UDn9zAZrrwkN1o6cWCTxgY4ovVfT4/LjxaD5IZSAc+p9HCUvQf6eWmKKvEhUd7TSoDmPCQ3bjyFkUilFXiwKcygA1/fbmPItYUZJ/u8cziPEYkDaxsYsHnNK7MUfSPOeQG0K9gZFTl3Z55pfu8lIFvVzaVw19f+YaiDyjc/UdGyEVZpZJ9PrkBhceGPqAvLyWUVZYY3P5Uj5FkBmTgfcQNq1QF7e4SFPcVdbqjUutBMgPJLqlsNOfppWIq0yo2ONUoMSvUO5x7LykpAwvLG8/uNrTVmVgPcG/YQxENWSh0QrkNij4WveKGi4/FN2I7sLm1A0xoK25+LLBon0crcWKr/C/8zXqkI1H/f/0JPDNnaCVeJTwAAAAASUVORK5CYII="
+                        />
+                        <h4>Sign In</h4>
+                    </div>
+                    <div data-input>
+                        <input
+                            type="email"
+                            name=""
+                            id=""
+                            value=""
+                            placeholder="Email Adress"
+                            required=""
+                        />
+                    </div>
+                    <div data-input>
+                        <input
+                            min="4"
+                            max="14"
+                            type="password"
+                            name=""
+                            id=""
+                            value=""
+                            placeholder="Password"
+                            required=""
+                        />
+                    </div>
+                    <div data-input>
+                        <button type="submit">Log In</button>
+                    </div>
+                </div>
+            </form>
+        </article>
+    </body>
+</html>
